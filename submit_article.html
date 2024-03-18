@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Article - Student Journal Publishing Platform</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Student Journal Publishing Platform</h1>
+</header>
+
+<nav>
+    <a href="home.html">Home</a>
+    <a href="articles.html">Articles</a>
+    <a href="submit_article.html">Submit Article</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="submit-article">
+    <h2>Submit Article</h2>
+    <form id="articleForm" action="submit.php" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author" required><br><br>
+
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="10" required></textarea><br><br>
+
+        <button type="submit" id="submitBtn">Submit</button>
+    </form>
+
+    <div id="thankYouMessage" style="display: none;">
+        <p>Thank you for submitting!</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Student Journal Publishing Platform. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById("articleForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Hide the form and show the thank you message
+        document.getElementById("articleForm").style.display = "none";
+        document.getElementById("thankYouMessage").style.display = "block";
+    });
+</script>
+
+</body>
+</html>
